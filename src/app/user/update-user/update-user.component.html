@@ -1,0 +1,62 @@
+<div class="new-container">
+  <form class="new-form" [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+    <input formControlName="email" type="email" placeholder="Email" />
+    <div *ngIf="updateUserForm.get('email')?.invalid && (updateUserForm.get('email')?.dirty || updateUserForm.get('email')?.touched)">
+      <p *ngIf="updateUserForm.get('email')?.errors && updateUserForm.get('email')?.errors!['email']">Please enter a valid email.</p>
+    </div>
+    <input formControlName="firstname" type="text" placeholder="Firstname" />
+    <input formControlName="lastname" type="text" placeholder="Lastname" />
+    <input formControlName="nickname" type="text" placeholder="Nickname" />
+    <input formControlName="birthdate" type="date" placeholder="Birthdate" />
+    <input formControlName="address" type="text" placeholder="Address" />
+    <input formControlName="phonenumber" type="text" placeholder="Phonenumber" maxlength="11" minlength="11" />
+    <div *ngIf="updateUserForm.get('phonenumber')?.invalid && (updateUserForm.get('phonenumber')?.dirty)">
+      <p *ngIf="updateUserForm.get('phonenumber')?.errors && updateUserForm.get('phonenumber')?.errors!['maxlength']">Phonenumber must be 11 characters.</p>
+      <p *ngIf="updateUserForm.get('phonenumber')?.errors && updateUserForm.get('phonenumber')?.errors!['minlength']">Phonenumber must be 11 characters.</p>
+    </div>
+    <select>
+      <option value="ADMIN">ADMIN</option>
+      <option value="USER" selected>USER</option>
+    </select>
+    <div class="buttons">
+      <button type="submit">Sign Up</button>
+    </div>
+    <div class="buttons">
+      <button type="reset" (click)="goBack()">Back</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!--<div class="new-container">
+    <form class="new-form" [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+      <label for="email">Email</label>
+      <input formControlName="email" id="email" type="email" value="{{user.email}}" />
+      <div *ngIf="updateUserForm.get('email')?.invalid">
+        <p *ngIf="updateUserForm.get('email')?.errors && updateUserForm.get('email')?.errors!['email']">Please enter a valid email.</p>
+      </div>
+      <label for="firstname">Firstname</label>
+      <input formControlName="firstname" id="firstname" type="text" value="{{user.firstname}}" />
+      <label for="lastname">Lastname</label>
+      <input formControlName="lastname" id="lastname" type="text" value="{{user.lastname}}" />
+      <label for="nickname">Nickname</label>
+      <input formControlName="nickname" id="nickname" type="text" value="{{user.nickname}}" />
+      <label for="address">Address</label>
+      <input formControlName="address" id="address" type="text" value="{{user.address}}" />
+      <label for="phonenumber">Phonenumber</label>-->
+      <!-- maxlength="11" minlength="11"-->
+      <!--<input formControlName="phonenumber" id="phonenumber" type="text" value="{{user.phonenumber}}" />
+      <div *ngIf="updateUserForm.get('phonenumber')?.invalid && (updateUserForm.get('phonenumber')?.dirty)">
+        <p *ngIf="updateUserForm.get('phonenumber')?.errors && updateUserForm.get('phonenumber')?.errors!['maxlength']">Password must be 11 characters.</p>
+        <p *ngIf="updateUserForm.get('phonenumber')?.errors && updateUserForm.get('phonenumber')?.errors!['minlength']">Password must be 11 characters.</p>
+      </div>
+      <div class="buttons">
+        <button type="submit">Update user</button>
+      </div>
+      <div class="buttons">
+        <button type="reset" (click)="goBack()">Back</button>
+      </div>
+    </form>
+  </div>-->
+  

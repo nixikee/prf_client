@@ -1,0 +1,41 @@
+<div class="table-container">
+    <table mat-table [dataSource]="ticketSales">
+        <ng-container matColumnDef="event">
+            <th mat-header-cell *matHeaderCellDef>Event</th>
+            <td mat-cell *matCellDef="let element">{{element.event.title}}</td>
+        </ng-container>
+        <ng-container matColumnDef="place_count">
+            <th mat-header-cell *matHeaderCellDef>Place count</th>
+            <td mat-cell *matCellDef="let element">{{element.place_count}}</td>
+        </ng-container>
+        <ng-container matColumnDef="sold_general_ticket">
+            <th mat-header-cell *matHeaderCellDef>Sold general ticket</th>
+            <td mat-cell *matCellDef="let element">{{element.sold_general_ticket}}</td>
+        </ng-container>
+        <ng-container matColumnDef="sold_VIP_ticket">
+            <th mat-header-cell *matHeaderCellDef>Sold VIP ticket</th>
+            <td mat-cell *matCellDef="let element">{{element.sold_VIP_ticket}}</td>
+        </ng-container>
+        <ng-container matColumnDef="sold_priority_ticket">
+            <th mat-header-cell *matHeaderCellDef>Sold priority ticket</th>
+            <td mat-cell *matCellDef="let element">{{element.sold_priority_ticket}}</td>
+        </ng-container>
+        <ng-container matColumnDef="sold_student_ticket">
+            <th mat-header-cell *matHeaderCellDef>Sold student ticket</th>
+            <td mat-cell *matCellDef="let element">{{element.sold_student_ticket}}</td>
+        </ng-container>
+        <ng-container matColumnDef="sold_child_ticket">
+            <th mat-header-cell *matHeaderCellDef>Sold child ticket</th>
+            <td mat-cell *matCellDef="let element">{{element.sold_child_ticket}}</td>
+        </ng-container>
+        <ng-container matColumnDef="sold_retired_ticket">
+            <th mat-header-cell *matHeaderCellDef>Sold retired ticket</th>
+            <td mat-cell *matCellDef="let element">{{element.sold_retired_ticket}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+
+</div>
+

@@ -1,0 +1,90 @@
+html, body { height: 100%; }
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+}
+
+.background {
+    background-color:rgb(95, 160, 146);
+}
+
+.title {
+    padding: 10px;
+    color: rgb(243, 171, 89);
+}
+
+app-root {
+    width: 100%;
+}
+
+//forms
+.new-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.new-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 10px;
+}
+
+.new-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.new-form .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.new-form button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    width: 100%;
+    color: white;
+    padding: 10px;
+}
+
+.new-form button:hover {
+    background-color: rgb(50, 74, 120);
+}
+
+.new-form button[type="button"] {
+    background-color: rgb(101, 231, 101);
+}
+
+.new-form button[type="button"]:hover {
+    background-color: rgb(57, 129, 57);
+}
+
+.new-form button[type="reset"] {
+    background-color: rgb(211, 76, 76);
+}
+
+.new-form button[type="reset"]:hover {
+    background-color: rgb(129, 45, 45);
+}
+
+.invalid-input {
+    border-color: #ff0000 !important;
+    border-width: 3px !important;
+    background-color: #ffdddd;
+}

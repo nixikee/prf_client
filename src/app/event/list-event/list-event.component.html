@@ -1,0 +1,32 @@
+<div class="table-container" *ngIf="events && events.length; else noEventsTemplate">
+    <table mat-table [dataSource]="events">
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Title</th>
+            <td mat-cell *matCellDef="let element">{{element.title}}</td>
+        </ng-container>
+        <ng-container matColumnDef="startdate">
+            <th mat-header-cell *matHeaderCellDef>Startdate</th>
+            <td mat-cell *matCellDef="let element">{{element.startdate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="finishdate">
+            <th mat-header-cell *matHeaderCellDef>Finishdate</th>
+            <td mat-cell *matCellDef="let element">{{element.finishdate}}</td>
+        </ng-container>
+        <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef>Location</th>
+            <td mat-cell *matCellDef="let element">{{element.location}}</td>
+        </ng-container>
+        <ng-container matColumnDef="details">
+            <th mat-header-cell *matHeaderCellDef>Details</th>
+            <td mat-cell *matCellDef="let element; let i = index"><mat-icon fontIcon="details" (click)="detailsEvent(element._id)"></mat-icon></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+
+</div>
+
+<ng-template #noEventsTemplate>
+    <p>No events available.</p>
+</ng-template>

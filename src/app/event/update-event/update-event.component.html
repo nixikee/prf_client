@@ -1,0 +1,34 @@
+<div class="new-container">
+    <form class="new-form" [formGroup]="updateEventForm" (ngSubmit)="onSubmit()">
+      <label for="title">Title</label>
+      <input formControlName="title" id="title" type="text" value="{{event.title}}" />
+      <label for="location">Location</label>
+      <input formControlName="location" id="location" type="text" value="{{event.location}}" />
+      <label for="place_count">Place count</label>
+      <input formControlName="place_count" id="place_count" type="number" value="{{event.place_count}}" />
+      <label for="general_ticket_price">General ticket price</label>
+      <input formControlName="general_ticket_price" id="general_ticket_price" type="number" value="{{event.general_ticket_price}}" />
+      <label for="VIP_ticket_price">VIP ticket price</label>
+      <input formControlName="VIP_ticket_price" id="VIP_ticket_price" type="number" value="{{event.VIP_ticket_price}}" />
+      <label for="priority_ticket_price">Priority ticket price</label>
+      <input formControlName="priority_ticket_price" id="priority_ticket_price" type="number" value="{{event.priority_ticket_price}}" />
+      <label for="student_ticket_price">Student ticket price</label>
+      <input formControlName="student_ticket_price" id="student_ticket_price" type="number" value="{{event.student_ticket_price}}" />
+      <label for="child_ticket_price">Child ticket price</label>
+      <input formControlName="child_ticket_price" id="child_ticket_price" type="number" value="{{event.child_ticket_price}}" />
+      <label for="retired_ticket_price">Retired ticket price</label>
+      <input formControlName="retired_ticket_price" id="retired_ticket_price" type="number" value="{{event.retired_ticket_price}}" />
+      <label for="startdate">Startdate</label>
+      <input formControlName="startdate" id="startdate" type="date" />
+      <label for="finishdate">Finishdate</label>
+      <input formControlName="finishdate" id="finishdate" type="date" />
+
+      <div class="buttons">
+        <button type="submit">Update event</button>
+      </div>
+      <div class="buttons">
+        <button type="reset" (click)="goBack()">Back</button>
+      </div>
+    </form>
+  </div>
+  

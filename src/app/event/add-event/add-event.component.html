@@ -1,0 +1,51 @@
+<div class="new-container">
+    <form class="new-form" [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
+      <label for="title">Title</label>
+      <input formControlName="title" type="text" id="title" required [ngClass]="{'invalid-input': addEventForm.get('title')?.errors}" />
+      <div *ngIf="addEventForm.get('title')?.dirty || addEventForm.get('title')?.touched">
+        <p *ngIf="addEventForm.get('title')?.errors && addEventForm.get('title')?.errors!['required']">Title is required</p>
+      </div>
+      <label for="startdate">Startdate</label>
+      <input formControlName="startdate" type="date" id="startdate" />
+      <div *ngIf="addEventForm.get('startdate')?.dirty || addEventForm.get('startdate')?.touched">
+        <p *ngIf="addEventForm.get('startdate')?.errors && addEventForm.get('startdate')?.errors!['required']">Startdate is required</p>
+      </div>
+      <label for="finishdate">Finishdate</label>
+      <input formControlName="finishdate" type="date" id="finishdate" />
+      <div *ngIf="addEventForm.get('finishdate')?.dirty || addEventForm.get('finishdate')?.touched">
+        <p *ngIf="addEventForm.get('finishdate')?.errors && addEventForm.get('finishdate')?.errors!['required']">Finishdate is required</p>
+      </div>
+      <label for="location">Location</label>
+      <input formControlName="location" type="text" id="location" />
+      <div *ngIf="addEventForm.get('location')?.dirty || addEventForm.get('location')?.touched">
+        <p *ngIf="addEventForm.get('location')?.errors && addEventForm.get('location')?.errors!['required']">Location is required</p>
+      </div>
+      <label for="place_count">Place count</label>
+      <input formControlName="place_count" type="number" id="place_count" value="0" />
+      <fieldset>
+        <legend>Tickets</legend><br>
+        <label for="general_ticket_price">General ticket price</label><br>
+        <input formControlName="general_ticket_price" type="number" id="general_ticket_price" value="0" /><br>
+        <label for="VIP_ticket_price">VIP ticket price</label><br>
+        <input formControlName="VIP_ticket_price" type="number" id="VIP_ticket_price" value="0" /><br>
+        <label for="priority_ticket_price">Priority ticket price</label><br>
+        <input formControlName="priority_ticket_price" type="number" id="priority_ticket_price" value="0" /><br>
+        <label for="student_ticket_price">Student ticket price</label><br>
+        <input formControlName="student_ticket_price" type="number" id="student_ticket_price" value="0" /><br>
+        <label for="child_ticket_price">Child ticket price</label><br>
+        <input formControlName="child_ticket_price" type="number" id="child_ticket_price" value="0" /><br>
+        <label for="retired_ticket_price">Retired ticket price</label><br>
+        <input formControlName="retired_ticket_price" type="number" id="retired_ticket_price" value="0" /><br>
+      </fieldset>
+      <label for="image">Image</label>
+      <input formControlName="image" type="text" id="image" />
+
+      <div class="buttons">
+        <button type="submit">Add event</button>
+      </div>
+      <div class="buttons">
+        <button type="reset" (click)="goBack()">Back</button>
+      </div>
+    </form>
+  </div>
+  

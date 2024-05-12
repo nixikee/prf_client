@@ -1,0 +1,16 @@
+<div class="new-container">
+    <form class="new-form" [formGroup]="addTicketForm" (ngSubmit)="onSubmit()">
+      <label for="place_count">Place count</label>
+      <input formControlName="place_count" type="number" id="place_count" value="0" />
+      <label for="purchased_ticket_type">Ticket type</label>
+      <input formControlName="purchased_ticket_type" type="text" id="purchased_ticket_type" />
+
+      <div class="buttons">
+        <button type="submit">Buy tickets</button>
+      </div>
+      <div class="buttons">
+        <button type="reset" (click)="goBack()">Back</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,58 @@
+<div class="p-3 mb-2 title-div" *ngIf="event">
+    <mat-card class="card">
+        <h2 class="title">{{event.title}}</h2>
+        <table class="table">
+            <tr>
+                <th>Id:</th>
+                <td>{{event._id}}</td>
+            </tr>
+            <tr>
+                <th>Startdate:</th>
+                <td>{{event.startdate}}</td>
+            </tr>
+            <tr>
+                <th>Finishdate:</th>
+                <td>{{event.finishdate}}</td>
+            </tr>
+            <tr>
+                <th>Location:</th>
+                <td>{{event.location}}</td>
+            </tr>
+            <tr>
+                <th>Place count:</th>
+                <td>{{event.place_count}}</td>
+            </tr>
+            <tr>
+                <th>General ticket price:</th>
+                <td>{{event.general_ticket_price}}</td>
+            </tr>
+            <tr>
+                <th>VIP ticket price:</th>
+                <td>{{event.VIP_ticket_price}}</td>
+            </tr>
+            <tr>
+                <th>Priority ticket price:</th>
+                <td>{{event.priority_ticket_price}}</td>
+            </tr>
+            <tr>
+                <th>Student ticket price:</th>
+                <td>{{event.student_ticket_price}}</td>
+            </tr>
+            <tr>
+                <th>Child ticket price:</th>
+                <td>{{event.child_ticket_price}}</td>
+            </tr>
+            <tr>
+                <th>Retired ticket price:</th>
+                <td>{{event.retired_ticket_price}}</td>
+            </tr>
+            <tr>
+                <th>Images:</th>
+                <td>{{event.image}}</td>
+            </tr>
+        </table>
+        <mat-icon fontIcon="shopping_cart_checkout" (click)="buyTicket(event._id)" *ngIf="isLoggedIn"></mat-icon>
+        <mat-icon fontIcon="update" (click)="updateEvent(event._id)" *ngIf="isLoggedIn && isAdmin"></mat-icon>
+        <mat-icon fontIcon="delete" (click)="deleteEvent(event._id)" *ngIf="isLoggedIn && isAdmin"></mat-icon>
+    </mat-card>
+</div>

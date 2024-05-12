@@ -1,0 +1,22 @@
+<div class="new-container">
+    <form class="new-form" [formGroup]="buyTicketForm" (ngSubmit)="onSubmit()">
+        <label for="place_count">Place count</label>
+        <input formControlName="place_count" type="number" id="place_count" value="0" />
+        <label for="ticket_type">Ticket type</label>
+        <select formControlName="purchased_ticket_type" id="ticket_type">
+          <option value="General ticket">General ticket</option>
+          <option value="VIP ticket">VIP ticket</option>
+          <option value="Priority ticket">Priority ticket</option>
+          <option value="Student ticket">Student ticket</option>
+          <option value="Child ticket">Child ticket</option>
+          <option value="Retired ticket">Retired ticket</option>
+        </select>
+        <div class="buttons">
+            <button type="submit">Buy ticket</button>
+        </div>
+        <div class="buttons">
+            <button type="reset" (click)="goBack()">Back</button>
+        </div>
+    </form>
+  </div>
+  

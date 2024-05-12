@@ -1,0 +1,35 @@
+<div class="p-3 mb-2 title-div" *ngIf="currentUser">
+    <mat-card class="card">
+        <h2 class="title">{{currentUser.lastname}} {{currentUser.firstname}}</h2>
+        <table class="table">
+            <tr>
+                <th>Id:</th>
+                <td>{{currentUser._id}}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{currentUser.email}}</td>
+            </tr>
+            <tr>
+                <th>Nickname:</th>
+                <td>{{currentUser.nickname}}</td>
+            </tr>
+            <tr>
+                <th>Birthdate:</th>
+                <td>{{currentUser.birthdate}}</td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td>{{currentUser.address}}</td>
+            </tr>
+            <tr>
+                <th>Phonenumber:</th>
+                <td>{{currentUser.phonenumber}}</td>
+            </tr>
+            <tr>
+                <th>Role:</th>
+                <td>{{currentUser.role}}</td>
+            </tr>
+        </table>
+    </mat-card>
+</div>

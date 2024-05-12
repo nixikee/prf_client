@@ -1,0 +1,52 @@
+<div class="new-container">
+  <form class="new-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <input formControlName="email" type="email" placeholder="Email" required [ngClass]="{'invalid-input': signupForm.get('email')?.errors}" />
+    <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)">
+      <p *ngIf="signupForm.get('email')?.errors && signupForm.get('email')?.errors!['required']">Email is required</p>
+      <p *ngIf="signupForm.get('email')?.errors && signupForm.get('email')?.errors!['email']">Please enter a valid email.</p>
+    </div>
+    <input formControlName="firstname" type="text" placeholder="Firstname" />
+    <div *ngIf="signupForm.get('firstname')?.dirty || signupForm.get('firstname')?.touched">
+      <p *ngIf="signupForm.get('firstname')?.errors && signupForm.get('firstname')?.errors!['required']">Firstname is required</p>
+    </div>
+    <input formControlName="lastname" type="text" placeholder="Lastname" />
+    <div *ngIf="signupForm.get('lastname')?.dirty || signupForm.get('lastname')?.touched">
+      <p *ngIf="signupForm.get('lastname')?.errors && signupForm.get('lastname')?.errors!['required']">Lastname is required</p>
+    </div>
+    <input formControlName="nickname" type="text" placeholder="Nickname" />
+    <input formControlName="birthdate" type="date" placeholder="Birthdate" />
+    <div *ngIf="signupForm.get('birthdate')?.dirty || signupForm.get('birthdate')?.touched">
+      <p *ngIf="signupForm.get('birthdate')?.errors && signupForm.get('birthdate')?.errors!['required']">Birthdate is required</p>
+    </div>
+    <input formControlName="address" type="text" placeholder="Address" />
+    <input formControlName="phonenumber" type="text" placeholder="Phonenumber" maxlength="11" minlength="11" />
+    <div *ngIf="signupForm.get('phonenumber')?.invalid && (signupForm.get('phonenumber')?.dirty)">
+      <p *ngIf="signupForm.get('phonenumber')?.errors && signupForm.get('phonenumber')?.errors!['maxlength']">Phonenumber must be 11 characters.</p>
+      <p *ngIf="signupForm.get('phonenumber')?.errors && signupForm.get('phonenumber')?.errors!['minlength']">Phonenumber must be 11 characters.</p>
+    </div>
+    <label for="role">Role</label>
+    <select id="role" formControlName="role">
+      <option value="ADMIN">ADMIN</option>
+      <option value="USER" selected>USER</option>
+    </select>
+    <div *ngIf="signupForm.get('role')?.dirty || signupForm.get('role')?.touched">
+      <p *ngIf="signupForm.get('role')?.errors && signupForm.get('role')?.errors!['required']">Role is required</p>
+    </div>
+    <input formControlName="password" type="password" placeholder="Password" required [ngClass]="{'invalid-input': signupForm.get('password')?.errors}" />
+    <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)">
+      <p *ngIf="signupForm.get('password')?.errors && signupForm.get('password')?.errors!['required']">Password is required</p>
+      <p *ngIf="signupForm.get('password')?.errors && signupForm.get('password')?.errors!['minlength']">Password must be at least 6 characters.</p>
+    </div>
+    <input formControlName="confirmPassword" type="password" placeholder="Confirm password" required [ngClass]="{'invalid-input': signupForm.get('confirmPassword')?.errors}" />
+    <div *ngIf="signupForm.get('confirmPassword')?.invalid && (signupForm.get('confirmPassword')?.dirty || signupForm.get('confirmPassword')?.touched)">
+      <p *ngIf="signupForm.get('confirmPassword')?.errors && signupForm.get('confirmPassword')?.errors!['required']">Confirming password is required</p>
+      <p *ngIf="signupForm.get('confirmPassword')?.errors && signupForm.get('confirmPassword')?.errors!['mustMatch']">Passwords must match.</p>
+    </div>
+    <div class="buttons">
+      <button type="submit">Sign Up</button>
+    </div>
+    <div class="buttons">
+      <button type="reset" (click)="goBack()">Back</button>
+    </div>
+  </form>
+</div>

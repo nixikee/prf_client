@@ -1,0 +1,39 @@
+<div class="background">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <div class="navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <div>
+                        <button mat-button (click)="navigate('/home')">Home</button>
+
+                        <button mat-button [matMenuTriggerFor]="belowMenu">Events</button>
+                        <mat-menu #belowMenu="matMenu">
+                        <button mat-menu-item (click)="navigate('/add-event')" *ngIf="isLoggedIn && isAdmin">Add event</button>
+                        <button mat-menu-item (click)="navigate('/list-events')">List events</button>
+                        </mat-menu>
+                        <button mat-button (click)="navigate('/list-users')" *ngIf="isLoggedIn && isAdmin">Users</button>
+                        <button mat-button (click)="navigate('/list-ticket-buying-history')" *ngIf="isLoggedIn">Ticket buying history</button>
+                        <button mat-button (click)="navigate('/list-ticket-sales')" *ngIf="isLoggedIn && isAdmin">Ticket sales</button>
+
+                        <div class="right" *ngIf="!isLoggedIn">
+                            <button mat-button (click)="navigate('/login')">Login</button>
+                            <button mat-button (click)="navigate('/register')">Sign up</button>
+                        </div>
+                        <div *ngIf="isLoggedIn">
+                            <button mat-button [matMenuTriggerFor]="afterMenu">{{username}}</button>
+                            <mat-menu #afterMenu="matMenu">
+                            <button mat-menu-item (click)="navigate('/profile')">My profile</button>
+                            <button mat-menu-item (click)="navigate('/update-password')">Update my password</button>
+                            <button mat-menu-item (click)="navigate('/update-user')">Buy ticket</button>
+                            </mat-menu>
+                    
+                            <button mat-button (click)="logout()">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<router-outlet />
